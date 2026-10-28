@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bloom Coffee | Every cup tells a story</title>
+  
+  <!-- Google Fonts for Elegant Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       1. NAVIGATION BAR
+       ============================================== -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-mug-hot logo-icon"></i>
+        <span class="logo-text">Brew &amp; Bloom</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       2. HERO SECTION
+       ============================================== -->
+  <section class="hero" id="home">
+    <!-- Background Coffee Video with Poster Fallback -->
+    <video class="hero-video" autoplay muted loop playsinline poster="images/coffee-hero.png">
+      <source src="videos/coffee-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Warm Gradient Overlay for Enhanced Readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content (Heading, Tagline, Buttons) -->
+    <div class="hero-content">
+      <span class="hero-badge">Artisanal Coffee &amp; Bakery</span>
+      <h1 class="hero-title">Brew &amp; Bloom Coffee</h1>
+      <p class="hero-tagline">“Every cup tells a story.”</p>
+      <p class="hero-description">
+        Experience handcrafted single-origin roasts and soothing artisanal brews,
+        crafted with passion in a serene, warm ambiance.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#about" class="btn btn-secondary">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       3. MENU SECTION
+       ============================================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Handcrafted Favorites</span>
+        <h2 class="section-title">Our Signature Menu</h2>
+        <div class="divider"><span>☕</span></div>
+        <p class="section-desc">Each cup is brewed with ethically harvested beans roasted to aromatic perfection.</p>
+      </div>
+
+      <!-- Menu Grid: 4 Signature Coffee Items -->
+      <div class="menu-grid">
+        
+        <!-- Item 1: Espresso Romano -->
+        <article class="menu-card">
+          <div class="menu-img-wrap">
+            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=700&q=80" alt="Espresso Romano with golden crema" loading="lazy">
+            <span class="badge">Signature</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-header-row">
+              <h3 class="item-name">Espresso Romano</h3>
+              <span class="item-price">$4.50</span>
+            </div>
+            <p class="item-desc">A bold double shot of Arabica espresso served with a fine twist of fresh lemon zest to unlock citrus undertones.</p>
+            <div class="card-footer">
+              <span class="serving-size">Double Shot • 60ml</span>
+              <button class="order-btn" title="Order this drink"><i class="fa-solid fa-plus"></i> Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Caramel Macchiato -->
+        <article class="menu-card">
+          <div class="menu-img-wrap">
+            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=700&q=80" alt="Caramel Macchiato with silky milk foam" loading="lazy">
+            <span class="badge">Bestseller</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-header-row">
+              <h3 class="item-name">Caramel Macchiato</h3>
+              <span class="item-price">$5.75</span>
+            </div>
+            <p class="item-desc">Freshly steamed velvety whole milk layered with espresso and drizzled with house-made salted vanilla caramel.</p>
+            <div class="card-footer">
+              <span class="serving-size">Hot or Iced • 350ml</span>
+              <button class="order-btn" title="Order this drink"><i class="fa-solid fa-plus"></i> Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Golden Honey Latte -->
+        <article class="menu-card">
+          <div class="menu-img-wrap">
+            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=700&q=80" alt="Golden Honey Latte with delicate latte art" loading="lazy">
+            <span class="badge">Seasonal</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-header-row">
+              <h3 class="item-name">Golden Honey Latte</h3>
+              <span class="item-price">$6.00</span>
+            </div>
+            <p class="item-desc">Silky oat milk, raw organic wildflower honey, and roasted espresso finished with a delicate dusting of Ceylon cinnamon.</p>
+            <div class="card-footer">
+              <span class="serving-size">Creamy • 300ml</span>
+              <button class="order-btn" title="Order this drink"><i class="fa-solid fa-plus"></i> Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Cold Brew Reserve -->
+        <article class="menu-card">
+          <div class="menu-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80" alt="Cold Brew Reserve over clear ice" loading="lazy">
+            <span class="badge">Chef's Pick</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-header-row">
+              <h3 class="item-name">Cold Brew Reserve</h3>
+              <span class="item-price">$5.25</span>
+            </div>
+            <p class="item-desc">Slow-steeped for 18 hours using single-origin Ethiopian beans. Exceptionally smooth, rich, and naturally sweet.</p>
+            <div class="card-footer">
+              <span class="serving-size">Slow Steeped • 400ml</span>
+              <button class="order-btn" title="Order this drink"><i class="fa-solid fa-plus"></i> Order</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       4. ABOUT SECTION
+       ============================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-wrapper">
+        <!-- Left: Image Showcase -->
+        <div class="about-image-block">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Cozy coffee brewing at Brew and Bloom" class="about-main-img">
+          <div class="experience-card">
+            <span class="exp-number">100%</span>
+            <span class="exp-text">Organic &amp; Fair Trade</span>
+          </div>
+        </div>
+
+        <!-- Right: Story & Values -->
+        <div class="about-content">
+          <span class="section-subtitle">Our Heritage</span>
+          <h2 class="section-title">Crafting Moments, One Sip at a Time</h2>
+          <div class="divider align-left"><span>☕</span></div>
+          
+          <p class="about-text">
+            Founded with a deep love for the art of coffee roasting, <strong>Brew &amp; Bloom Coffee</strong> began as a neighborhood dream: to create a warm sanctuary where friends, dreamers, and coffee lovers can slow down and savor life.
+          </p>
+          <p class="about-text">
+            We partner directly with sustainable, fair-trade coffee farms around the world. Every bean is carefully selected, precisely roasted, and lovingly prepared by our skilled baristas.
+          </p>
+
+          <!-- Feature Highlights List -->
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div>
+                <h4>Ethically Sourced</h4>
+                <p>100% fair-trade beans supporting small regenerative farms.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <div>
+                <h4>Artisanal Roasting</h4>
+                <p>Small batch roasted weekly to preserve fragrant notes and oils.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+              <div>
+                <h4>Warm Community</h4>
+                <p>A welcoming space designed for comfort, study, and connection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       5. CONTACT SECTION
+       ============================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Visit Us Or Say Hello</h2>
+        <div class="divider"><span>☕</span></div>
+        <p class="section-desc">We would love to welcome you. Drop in for a brew or reach out with any question.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Information Cards -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h3>Location</h3>
+              <p>42 Blossom Avenue, Heritage District</p>
+              <p>Greenwich, NY 10012</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h3>Opening Hours</h3>
+              <p>Monday - Friday: 7:00 AM – 8:00 PM</p>
+              <p>Saturday - Sunday: 8:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h3>Phone Number</h3>
+              <p>+1 (555) 349-2739</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h3>Email</h3>
+              <p>hello@brewandbloom.coffee</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-container">
+          <form id="contact-form" class="contact-form" novalidate>
+            <h3 class="form-title">Send Us a Message</h3>
+
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Alex Morgan" required>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="e.g. alex@example.com" required>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="How can we help you today?" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fa-regular fa-paper-plane"></i> Send Message
+            </button>
+
+            <!-- Feedback Notice (Managed via JavaScript) -->
+            <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       6. FOOTER
+       ============================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <i class="fa-solid fa-mug-hot logo-icon"></i>
+          <span class="logo-text">Brew &amp; Bloom</span>
+        </div>
+        <p class="footer-tagline">“Every cup tells a story.”</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Bloom Coffee. Handcrafted for college project.</p>
+    </div>
+  </footer>
+
+  <!-- Link to JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

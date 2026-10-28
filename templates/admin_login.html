@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login | Brew & Bloom</title>
+  <link rel="stylesheet" href="{{ url_for('admin_static_css') }}">
+</head>
+<body>
+  <main class="auth-card">
+    <a class="brand" href="/">☕ Brew &amp; Bloom</a>
+    <h1>Admin login</h1>
+    <p class="muted">Sign in to manage coffee orders and contact messages.</p>
+    {% if error %}<p class="alert error">{{ error }}</p>{% endif %}
+    <form method="post">
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+    </form>
+    <p class="muted small">Demo default: admin / CoffeeDemo123! — change these before sharing.</p>
+    <a href="/">← Back to website</a>
+  </main>
+</body>
+</html>

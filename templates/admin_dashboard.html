@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | Brew & Bloom</title>
+  <link rel="stylesheet" href="{{ url_for('admin_static_css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">☕ Brew &amp; Bloom</a>
+    <div class="top-actions"><span>Signed in as {{ session.get('admin_username', 'admin') }}</span>
+      <form method="post" action="{{ url_for('admin_logout') }}"><button class="secondary" type="submit">Log out</button></form>
+    </div>
+  </header>
+  <main class="dashboard">
+    <div class="page-heading"><div><p class="eyebrow">MANAGEMENT</p><h1>Admin dashboard</h1>
+      <p class="muted">Orders, menu availability and customer messages.</p></div><a class="button-link" href="/">View website</a></div>
+    {% with items = get_flashed_messages(with_categories=true) %}
+      {% for category, message in items %}<p class="alert {{ category }}">{{ message }}</p>{% endfor %}
+    {% endwith %}
+
+    <section class="panel">
+      <div class="section-heading"><h2>Orders</h2><span class="count">{{ orders|length }} total</span></div>
+      {% if orders %}
+      <div class="table-wrap"><table>
+        <thead><tr><th>Order</th><th>Customer</th><th>Item</th><th>Qty</th><th>Total</th><th>Date</th><th>Status</th><th>Update</th></tr></thead>
+        <tbody>{% for order in orders %}
+          <tr><td>#{{ order.id }}</td><td>{{ order.customer_name }}<br><span class="muted">{{ order.customer_email }}</span></td>
+          <td>{{ order.item_name }}</td><td>{{ order.quantity }}</td><td>${{ '%.2f'|format(order.total) }}</td>
+          <td>{{ order.created_at }}</td><td><span class="status">{{ order.status }}</span></td>
+          <td><form class="inline-form" method="post" action="{{ url_for('admin_dashboard') }}">
+            <input type="hidden" name="order_id" value="{{ order.id }}">
+            <select name="status" aria-label="Status for order {{ order.id }}">{% for status in statuses %}
+              <option value="{{ status }}" {% if order.status == status %}selected{% endif %}>{{ status }}</option>
+            {% endfor %}</select><button type="submit">Save</button></form></td></tr>
+        {% endfor %}</tbody>
+      </table></div>
+      {% else %}<p class="empty">No orders yet. Place a test order from the website.</p>{% endif %}
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><h2>Menu availability</h2><span class="count">{{ menu|length }} items</span></div>
+      <div class="menu-list">{% for item in menu %}
+        <div class="menu-row"><div><strong>{{ item.name }}</strong><p class="muted">${{ '%.2f'|format(item.price) }} · {{ 'Available' if item.available else 'Hidden from ordering' }}</p></div>
+          <form method="post" action="{{ url_for('toggle_menu_item', item_id=item.id) }}"><button class="{{ 'secondary' if item.available else '' }}" type="submit">{{ 'Hide item' if item.available else 'Make available' }}</button></form>
+        </div>
+      {% endfor %}</div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><h2>Contact messages</h2><span class="count">{{ messages|length }} total</span></div>
+      {% if messages %}
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th><th>Received</th></tr></thead><tbody>
+        {% for message in messages %}<tr><td>#{{ message.id }}</td><td>{{ message.name }}</td><td>{{ message.email }}</td><td class="message-cell">{{ message.message }}</td><td>{{ message.created_at }}</td></tr>{% endfor %}
+      </tbody></table></div>
+      {% else %}<p class="empty">No contact messages yet.</p>{% endif %}
+    </section>
+    <p class="footnote">College-project demo. Do not use the built-in credentials or development server for a public production site.</p>
+  </main>
+</body>
+</html>
