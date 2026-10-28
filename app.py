@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 import sqlite3
 import re
 from datetime import datetime
@@ -19,8 +21,8 @@ app.config["SECRET_KEY"] = os.environ.get("FLASK_SECRET_KEY", "local-demo-change
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
-ADMIN_USERNAME = os.environ.get("BREW_ADMIN_USERNAME", "admin")
-ADMIN_PASSWORD = os.environ.get("BREW_ADMIN_PASSWORD", "CoffeeDemo123!")
+ADMIN_USERNAME = os.environ.get("BREW_ADMIN_USERNAME")
+ADMIN_PASSWORD = os.environ.get("BREW_ADMIN_PASSWORD")
 ADMIN_PASSWORD_HASH = generate_password_hash(ADMIN_PASSWORD)
 
 MENU_ITEMS = [
